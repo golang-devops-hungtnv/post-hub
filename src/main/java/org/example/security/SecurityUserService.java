@@ -20,9 +20,9 @@ public class SecurityUserService implements UserDetailsService {
 
     @SneakyThrows
     public static User getCurrentUser() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        var principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (ANONYMOUS_USER.equals(principal)) throw new PermissionDeniedException();
-        Object securityUser = (SecurityUser) principal;
+        var securityUser = (SecurityUser) principal;
 
         return securityUser.getUser();
     }
