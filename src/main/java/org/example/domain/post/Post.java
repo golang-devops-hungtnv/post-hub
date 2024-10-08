@@ -22,10 +22,10 @@ public class Post extends BaseEntity {
     private String content;
 
     @Column(name="total_likes", nullable = true)
-    private Long total_likes;
+    private Long totalLikes;
 
     @Column(name="total_comments", nullable = true)
-    private Long total_comments;
+    private Long totalComments;
 }
 
 
