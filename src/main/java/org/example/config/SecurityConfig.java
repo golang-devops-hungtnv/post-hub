@@ -9,8 +9,8 @@ import org.example.filter.AuthenticationFilter;
 import org.example.filter.SecurityFilter;
 import org.example.intercepter.RequestLoggerInterceptor;
 import org.example.intercepter.SecurityEntryInterceptor;
+import org.example.port.service.IdentityService;
 import org.example.port.service.JsonService;
-import org.example.port.service.JwtService;
 import org.example.security.SecurityUserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,7 +42,7 @@ public class SecurityConfig implements WebMvcConfigurer {
             "GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS"
     };
 
-    private final JwtService jwtService;
+    private final IdentityService identityService;
     private final JsonService jsonService;
     private final SecurityUserService securityUserService;
     private final SecurityEntryInterceptor securityEntryPointInterceptor;
@@ -54,7 +54,7 @@ public class SecurityConfig implements WebMvcConfigurer {
 
     @Bean
     public AuthenticationFilter authenticationFilter() {
-        return new AuthenticationFilter(jwtService, securityUserService);
+        return new AuthenticationFilter(identityService, securityUserService);
     }
 
     @Bean

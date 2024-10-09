@@ -90,6 +90,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>sh.ory.kratos</groupId>
+            <artifactId>kratos-client</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
+
 
 
 
