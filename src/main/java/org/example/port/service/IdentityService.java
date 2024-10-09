@@ -6,5 +6,4 @@ import java.util.Optional;
 
 public interface IdentityService {
     public Optional<IdentityDto> getUserByAuthToken(String authToken);
-
 }
