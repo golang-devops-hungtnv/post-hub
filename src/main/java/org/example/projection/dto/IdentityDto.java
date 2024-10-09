@@ -8,7 +8,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class IdentityDto {
-    private String Id;
-    private String Email;
-    private String Password;
+    private String owner;
+    private String email;
+    private String password;
 }

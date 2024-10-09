@@ -14,7 +14,6 @@ import org.springframework.util.CollectionUtils;
 @RequiredArgsConstructor
 public class UserFacadeImpl implements UserFacade {
     private final UserRepository userRepository;
-
     @Override
     public List<UserDto> getUsers() {
         var users = this.userRepository.findAll();
